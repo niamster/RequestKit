@@ -125,7 +125,7 @@ public extension Router {
         guard let url = urlComponents.url else { return nil }
         switch encoding {
         case .url, .json:
-            var mutableURLRequest = URLRequest(url: url)
+            var mutableURLRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData)
             mutableURLRequest.httpMethod = method.rawValue
             return mutableURLRequest
         case .form:
